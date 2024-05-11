@@ -4,18 +4,18 @@ function Header() {
   return (
     <div>
       <header className="bg-purple-700 text-white border-b-4 border-yellow-400 p-4 flex justify-between">
-        <div className="flex gap-12 items-center">
-          <Link href={"/"} className="text-lg">LINK<span className="text-yellow-400 font-bold">Chain</span></Link>
-          <nav className="flex gap-4 text-sm">
+        <div className="flex lg:gap-12 gap-8 items-center">
+          <Link href={"/"} className="text-sm lg:text-lg">LINK<span className="text-yellow-400 font-bold">Chain</span></Link>
+          <nav className="flex gap-4 text-[10px] lg:text-sm">
             <Link href={"/"}>Home</Link>
             <Link href={"/pricing"}>Pricing</Link>
             <Link href={"/contact"}>Contact</Link>
           </nav>
         </div>
 
-        <div className="text-sm flex gap-4 items-center">
+        <div className="text-[12px] lg:text-sm flex gap-4 items-center">
           <Link href={"/login"}>Login</Link>
-          <Link href={"/Register"}>Create an account</Link>
+          <Link href={"/Register"}>Sign Up</Link>
         </div>
       </header>
     </div>
