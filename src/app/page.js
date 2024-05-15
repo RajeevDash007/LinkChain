@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HeroForm from "./components/forms/HeroForm";
+import HeroForm from "@/components/forms/HeroForm";
 
 
 export default function Home() {

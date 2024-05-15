@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+import { authOptions } from '../app/api/auth/[...nextauth]/route';
 import Image from 'next/image';
 import Logout from './buttons/Logout';
 async function Header() {

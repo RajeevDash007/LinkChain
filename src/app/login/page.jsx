@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginWithGoogle from '../components/buttons/LoginWithGoogle'
+import LoginWithGoogle from '@/components/buttons/LoginWithGoogle'
 function page() {
   return (
     <div>
