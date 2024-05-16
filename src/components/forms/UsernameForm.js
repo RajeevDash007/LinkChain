@@ -2,6 +2,7 @@
 import getUsername from "@/actions/getUsername";
 import { redirect } from "next/navigation";
 import { useState } from "react";
+import SubmitButton from "../buttons/SubmitButton";
 
 export default function UsernameForm({ desiredUsername }) {
   const [taken, setTaken] = useState(false);
@@ -9,7 +10,7 @@ export default function UsernameForm({ desiredUsername }) {
     const result = await getUsername(formData);
     setTaken(result === false);
     if (result) {
-      redirect('/account/'+formData.get('username'));
+      redirect('/account?created='+formData.get('username'));
     }
   }
 
@@ -38,12 +39,9 @@ export default function UsernameForm({ desiredUsername }) {
             </div>
           )}
 
-          <button
-            type="submit"
-            className="bg-slate-700 p-1 px-7 shadow-sm hover:shadow-xl text-white rounded-full hover:bg-slate-900 dark:hover:bg-slate-500 block mx-auto"
-          >
+          <SubmitButton>
             Claim your username
-          </button>
+          </SubmitButton>
         </div>
       </form>
     </div>

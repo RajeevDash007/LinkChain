@@ -1,8 +1,11 @@
 import Link from "next/link";
 import HeroForm from "@/components/forms/HeroForm";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 
 export default function Home() {
+  const session = getServerSession(authOptions)
   return (
     <main>    
       <section className="flex flex-col justify-center items-center pt-40">
@@ -17,7 +20,7 @@ export default function Home() {
         </div>
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 mt-10">
           <div className="mx-auto w-full space-y-4">
-            <HeroForm/>
+            <HeroForm user={session?.user}/>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               By signing up, you agree to our {"  "}
               <Link className="underline underline-offset-2" href="#">
