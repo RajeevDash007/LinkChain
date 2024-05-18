@@ -7,7 +7,7 @@ import { getServerSession } from "next-auth";
 
 export default async function getUsername(formData) {
     const username = formData.get('username');
-    mongoose.connect(process.env.MONGODB_URI);
+    mongoose.connect(process.env.MONGODB_URI); mongoose.connect(process.env.MONGODB_URI);
     const existingPageDoc = await Page.findOne({uri:username});
     if (existingPageDoc) {
       return false;

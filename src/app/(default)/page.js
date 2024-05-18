@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HeroForm from "@/components/forms/HeroForm";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 
 export default function Home() {
