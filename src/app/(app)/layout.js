@@ -4,10 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileLines, faChartLine } from "@fortawesome/free-solid-svg-icons";
-import Logout from "@/components/buttons/Logout";
+import AppSidebar from "@/components/layout/AppSidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,35 +23,23 @@ export default async function AppLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <main className="flex min-h-screen">
-          <aside className="bg-purple-700 w-48 p-4 flex flex-col items-center">
+          <aside className="bg-purple-700 w-48 p-4 flex flex-col items-center shadow-xl">
             <div className="">
               <Image
                 src={session.user.image}
                 alt="Logo"
                 width={128}
                 height={128}
-                className="rounded-full border-4 border-yellow-400"
+                className="rounded-full border-4 border-yellow-400 shadow-xl"
               />
             </div>
-            <div className="flex flex-col justify-center mt-8 gap-8 text-slate-300">
-              <Link
-                href={"/account"}
-                className="hover:underline hover:text-white flex justify-center items-center gap-4"
-              >
-                <FontAwesomeIcon icon={faFileLines} className="h-6" />
-                <span>My Page</span>
-              </Link>
-              <Link
-                href={"/analytics"}
-                className="hover:underline hover:text-white flex justify-center items-center gap-4"
-              >
-                <FontAwesomeIcon icon={faChartLine} className="h-6" />
-                <span>Analytics</span>
-              </Link>
-              <Logout/>
-            </div>
+           <AppSidebar/>
           </aside>
-          <div className="p-6 mx-auto max-w-4xl">{children}</div>
+          <div className="grow">
+            <div className="bg-slate-200 m-8 p-4 shadow-xl">
+            {children}
+            </div>
+          </div>
         </main>
       </body>
     </html>
