@@ -10,3 +10,19 @@
  body{
   @apply dark:bg-slate-800;
  }
+
+ .radio-togglers{
+  @apply p-1 bg-white inline-flex border border-blue-500;
+ }
+
+ .radio-togglers span{
+  @apply bg-gray-300 p-2 px-4 cursor-pointer block text-gray-700;
+ }  
+
+ .radio-togglers input[type="radio"]{
+  @apply hidden;
+ }
+
+ .radio-togglers input[type="radio"]:checked + span{
+  @apply bg-blue-500 text-white;
+ }
