@@ -18,14 +18,20 @@ export default async function PageSettingsForm({ page }) {
             ]}
           />
         </div>
-        <div className="flex justify-center relative -top-8">
+        
+        <div className="flex justify-center -mb-6">
           <Image
             src={session?.user?.image}
-            className="rounded-full border-white border-4 shadow-lg shadow-black/50"
+            className="rounded-full border-white border-4 relative -top-8 shadow-lg shadow-black/50"
             alt="avatar"
             width={128}
             height={128}
           />
+        </div>
+        <div className="p-4">
+          <input type="text" id="nameIn" placeholder="Display Name"/>
+          <input type="text" id="locationIn" placeholder="Location"/>
+          <textarea id="bioIn" placeholder="Bio"/>
         </div>
       </form>
     </div>
