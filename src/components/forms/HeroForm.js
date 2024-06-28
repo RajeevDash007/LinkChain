@@ -36,10 +36,10 @@ function HeroForm({user}) {
         onSubmit={handleSubmit}
         className="flex flex-col lg:flex-row space-x-2 items-center gap-4"
       >
-        <div className="flex">
-          <span className="dark:text-white">linkchain.to/</span>
+        <div className="flex justify-center">
+          <span className="dark:text-white pt-2 pr-2">linkchain.to/</span>
           <input
-            className="max-w-lg flex-1 shadow-xl border-yellow-400 rounded-md border-2 outline-sky-500"
+            className="max-w-lg shadow-xl border-yellow-400 rounded-md border-2 outline-sky-500"
             placeholder="username"
             type="text"
           />
